@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border=1px>
+        <tr>
+            <th>id</th>
+            <th>companyname</th>
+            <th>flavor</th>
+            <th>price</th>
+            <th>quantity</th>
+        </tr>
+        {% for i in res %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.brand }}</td>
+            <td>{{ i.flavor }}</td>
+            <td>{{ i.price }}</td>
+            <td>{{ i.quantity }}</td>
+        
+        </tr>
+        
+        {% endfor %}
+
+    <form method="POST">{% csrf_token %}
+        <label for="n1">enter the id number </label>
+        <input type="number" placeholder="enter id number you have to change" required id="n1" name="idnumber">
+        <hr>
+        
+        <label for="n2">enter the brand Name </label>
+        <input type="text" placeholder="enter the brand " required id="n2" name="brands">
+        <hr>
+        
+        <label for="n3">enter the flavor </label>
+        <input type="text" placeholder="enter the flavor" required id="n3" name="flavors">
+        <hr>
+        
+        <label for="n4">enter the price </label>
+        <input type="number" placeholder="enter the price" required id="n4" name="prices">
+        <hr>
+        
+        <label for="n5">enter the quantity </label>
+        <input type="number" placeholder="enter the quantity" required id="n5" name="quantitys">
+        <hr>
+        <button type="submit">change</button>
+    </form>
+    <p>
+        {{abc.id}}--{{ abc.brand }}--{{ abc.flavor }}--{{ abc.price }}
+        {{ abc.quantity}}
+    </p>
+    <br>
+    <hr>
+</body>
+</html>

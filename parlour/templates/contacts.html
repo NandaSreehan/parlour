@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border=1px>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>phone</th>
+            
+        </tr>
+        {% for i in res %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.number }}</td>
+            
+        
+        </tr>
+        
+        {% endfor %}
+
+    <form method="POST">{% csrf_token %}
+        <label for="n1">enter the id number </label>
+        <input type="number" placeholder="enter id number you have to change" required id="n1" name="idnumber">
+        <button type="search">search</button>
+    </form>
+    <p>
+        {{ a.name }}----{{ a.number }}
+    </p>
+</body>
+</html>
